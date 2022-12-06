@@ -36,8 +36,6 @@ vim.opt.updatetime = 50
 
 vim.opt.colorcolumn = "80"
 
-vim.cmd.colorscheme 'catppuccin-macchiato'
-
 vim.g.mapleader = " "
 
 vim.api.nvim_set_option("clipboard","unnamed")
