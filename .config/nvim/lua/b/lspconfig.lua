@@ -1,8 +1,6 @@
 -- Setup nvim-cmp.
 local cmp = require("cmp")
 local source_mapping = {
-	youtube = "[Suck it YT]",
-	-- buffer = "[Buffer]",
 	nvim_lsp = "[LSP]",
 	nvim_lua = "[Lua]",
 	-- cmp_tabnine = "[TN]",
@@ -29,7 +27,7 @@ cmp.setup({
 		["<C-d>"] = cmp.mapping.scroll_docs(4),
 		["<C-Space>"] = cmp.mapping.complete(),
 	}),
-
+  
 	formatting = {
 		format = function(entry, vim_item)
 			vim_item.kind = lspkind.presets.default[vim_item.kind]
