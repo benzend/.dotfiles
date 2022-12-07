@@ -1,2 +1,2 @@
-require("telescope").setup{}
-require("telescope").load_extension("project")
+require('telescope').setup{}
+require('telescope').load_extension('project')

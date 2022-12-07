@@ -1,4 +1,4 @@
-vim.opt.guicursor = ""
+vim.opt.guicursor = ''
 
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -24,8 +24,8 @@ vim.opt.incsearch = true
 vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
-vim.opt.signcolumn = "yes"
-vim.opt.isfname:append("@-@")
+vim.opt.signcolumn = 'yes'
+vim.opt.isfname:append('@-@')
 
 -- Give more space for displaying messages.
 vim.opt.cmdheight = 1
@@ -34,8 +34,8 @@ vim.opt.cmdheight = 1
 -- delays and poor user experience.
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = '80'
 
-vim.g.mapleader = " "
+vim.g.mapleader = ' '
 
-vim.api.nvim_set_option("clipboard","unnamed")
+vim.api.nvim_set_option('clipboard','unnamed')
