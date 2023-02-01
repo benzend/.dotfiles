@@ -22,6 +22,8 @@ require('packer').startup(function(use)
   use { 'jose-elias-alvarez/null-ls.nvim' }
   use { 'terrortylor/nvim-comment' }
 
+  use { 'christoomey/vim-tmux-navigator' }
+
   -- lsp 
   use { 'neovim/nvim-lspconfig' }
   use { 'williamboman/mason.nvim' }
@@ -35,4 +37,8 @@ require('packer').startup(function(use)
   use { 'onsails/lspkind-nvim' }
   use { 'L3MON4D3/LuaSnip', tag = 'v1.*' }
   use { 'saadparwaiz1/cmp_luasnip' }
+
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+
+  use { 'tpope/vim-fugitive' }
 end)
