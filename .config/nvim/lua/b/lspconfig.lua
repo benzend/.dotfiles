@@ -7,6 +7,7 @@ local source_mapping = {
 	path = '[Path]',
 }
 local lspkind = require('lspkind')
+local luasnip = require('luasnip')
 
 cmp.setup({
 	snippet = {
@@ -15,7 +16,7 @@ cmp.setup({
 			-- vim.fn['vsnip#anonymous'](args.body)
 
 			-- For `luasnip` user.
-			require('luasnip').lsp_expand(args.body)
+			luasnip.lsp_expand(args.body)
 
 			-- For `ultisnips` user.
 			-- vim.fn['UltiSnips#Anon'](args.body)
@@ -27,8 +28,6 @@ cmp.setup({
         cmp.select_next_item()
       elseif luasnip.expand_or_jumpable() then
         luasnip.expand_or_jump()
-      elseif has_words_before() then
-        cmp.complete()
       else
         fallback()
       end

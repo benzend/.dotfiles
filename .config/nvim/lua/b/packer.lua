@@ -44,4 +44,10 @@ require('packer').startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
+
+  use {
+    "L3MON4D3/LuaSnip",
+    tag = "v1.*",
+    run = "make install_jsregexp"
+  }
 end)
