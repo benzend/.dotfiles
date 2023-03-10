@@ -146,10 +146,6 @@ require('lspconfig')['html'].setup{
     on_attach = on_attach,
     flags = lsp_flags
 }
-require('lspconfig')['intellephense'].setup{
-  on_attach = on_attach,
-  flags = lsp_flags,
-}
 require('lspconfig')['solargraph'].setup{
   on_attach = on_attach,
   flags = lsp_flags,
