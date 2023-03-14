@@ -1,5 +1,3 @@
-# .dotfiles
-
 In order to pull in this .dotfiles setup for linux or macOS (this won't work for Windows) please follow these steps:
 
 Add a `dotfiles` alias to your `.bashrc` so that you can easily pull in and control your dotfiles
