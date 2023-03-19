@@ -1,5 +1,6 @@
 require 'b.packer'
 require 'b.settings'
+require 'b.node-fallback'
 require 'b.mappings'
 require 'b.mason'
 require 'b.telescope'
