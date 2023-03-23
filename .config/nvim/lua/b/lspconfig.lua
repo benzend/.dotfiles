@@ -138,9 +138,12 @@ require('lspconfig')['rust_analyzer'].setup{
       ['rust-analyzer'] = {}
     }
 }
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
 require('lspconfig')['cssls'].setup{
     on_attach = on_attach,
-    flags = lsp_flags
+    flags = lsp_flags,
+    capabilities = capabilities,
 }
 require('lspconfig')['html'].setup{
     on_attach = on_attach,
