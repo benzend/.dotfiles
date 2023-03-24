@@ -50,4 +50,6 @@ require('packer').startup(function(use)
     tag = "v1.*",
     run = "make install_jsregexp"
   }
+
+  use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" }
 end)
