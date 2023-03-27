@@ -70,7 +70,7 @@ cmp.setup({
 	sources = {
 		-- tabnine completion? yayaya
 
-		-- { name = 'cmp_tabnine' },
+		{ name = 'cmp_tabnine' },
 
 		{ name = 'nvim_lsp' },
 
