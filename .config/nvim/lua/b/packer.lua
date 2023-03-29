@@ -35,7 +35,11 @@ require('packer').startup(function(use)
   use { 'hrsh7th/cmp-cmdline' }
   use { 'hrsh7th/nvim-cmp' }
   use { 'onsails/lspkind-nvim' }
-  use { 'L3MON4D3/LuaSnip', tag = 'v1.*' }
+  use {
+    "L3MON4D3/LuaSnip",
+    tag = "v1.*",
+    run = "make install_jsregexp"
+  }
   use { 'saadparwaiz1/cmp_luasnip' }
 
   use { 'tpope/vim-fugitive' }
@@ -45,11 +49,6 @@ require('packer').startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
 
-  use {
-    "L3MON4D3/LuaSnip",
-    tag = "v1.*",
-    run = "make install_jsregexp"
-  }
 
   use { 'codota/tabnine-nvim', run = "./dl_binaries.sh" }
   use { 'tzachar/cmp-tabnine', run='./install.sh', requires = 'hrsh7th/nvim-cmp' }
