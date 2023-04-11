@@ -19,6 +19,7 @@ require('packer').startup(function(use)
       }
     end
   }
+  use { 'nvim-telescope/telescope-live-grep-args.nvim' }
   use { 'jose-elias-alvarez/null-ls.nvim' }
   use { 'terrortylor/nvim-comment' }
 
