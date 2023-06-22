@@ -3,7 +3,7 @@ local cmp = require("cmp")
 local source_mapping = {
 	nvim_lsp = "[LSP]",
 	nvim_lua = "[Lua]",
-	-- cmp_tabnine = '[TN]',
+	cmp_tabnine = "[TN]",
 	path = "[Path]",
 }
 local lspkind = require("lspkind")
@@ -68,20 +68,11 @@ cmp.setup({
 	},
 
 	sources = {
-		-- tabnine completion? yayaya
-
 		{ name = "cmp_tabnine" },
 
 		{ name = "nvim_lsp" },
 
-		-- For vsnip user.
-		-- { name = 'vsnip' },
-
-		-- For luasnip user.
 		{ name = "luasnip" },
-
-		-- For ultisnips user.
-		-- { name = 'ultisnips' },
 	},
 })
 -- Mappings.
