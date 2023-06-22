@@ -1,13 +1,14 @@
-require 'b.packer'
-require 'b.settings'
-require 'b.node-fallback'
-require 'b.mappings'
-require 'b.mason'
-require 'b.telescope'
-require 'b.lspconfig'
-require 'b.null-ls'
-require 'b.nvim-comment'
-require 'b.catppuccin'
-require 'b.nvim-treesitter'
-require 'b.luasnip'
-require 'b.tabnine'
+require("b.packer")
+require("b.settings")
+require("b.node-fallback")
+require("b.mappings")
+require("b.mason")
+require("b.telescope")
+require("b.lspconfig")
+require("b.null-ls")
+require("b.nvim-comment")
+require("b.catppuccin")
+require("b.nvim-treesitter")
+require("b.luasnip")
+require("b.tabnine")
+require("b.autoclose")

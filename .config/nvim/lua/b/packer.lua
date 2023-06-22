@@ -53,4 +53,6 @@ require("packer").startup(function(use)
 
 	use({ "codota/tabnine-nvim", run = "./dl_binaries.sh" })
 	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
+
+	use("m4xshen/autoclose.nvim")
 end)
