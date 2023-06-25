@@ -1,4 +1,4 @@
-## Setting up your ~/.config
+## Setting up your ~/.dotfiles
 
 In order to pull in this .dotfiles setup for linux or macOS (this won't work for Windows) please follow these steps:
 
