@@ -1,3 +1,5 @@
+## Setting up your ~/.config
+
 In order to pull in this .dotfiles setup for linux or macOS (this won't work for Windows) please follow these steps:
 
 Add a dotfiles alias to your .bashrc so that you can easily pull in and control your dotfiles
@@ -19,3 +21,23 @@ Inject the files from the repository into your system
 Remove tracking of any files that aren't from the repo
 
 `dotfiles config --local status.showUntrackedFiles no`
+
+## Neovim setup
+
+Install Neovim
+
+https://github.com/neovim/neovim#install-from-package
+
+Install Packer
+
+https://github.com/wbthomason/packer.nvim#quickstart
+
+## Tmux setup
+
+Install Tmux
+
+https://github.com/tmux/tmux/wiki/Installing
+
+Install TPM (tmux package manager)
+
+https://github.com/tmux-plugins/tpm#installation
