@@ -54,4 +54,6 @@ require("packer").startup(function(use)
 	use({ "tzachar/cmp-tabnine", run = "./install.sh", requires = "hrsh7th/nvim-cmp" })
 
 	use("m4xshen/autoclose.nvim")
+
+	use("edluffy/hologram.nvim")
 end)
