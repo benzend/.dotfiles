@@ -1,3 +1,5 @@
+-- for old outdated node repositories in case the node version is under 12
+
 local trim = function(str)
   return string.gsub(str, '^%s*(.-)%s*$', '%1')
 end

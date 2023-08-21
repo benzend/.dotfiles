@@ -1,15 +1,11 @@
-require("b.packer")
-require("b.settings")
-require("b.node-fallback")
-require("b.mappings")
-require("b.mason")
-require("b.telescope")
-require("b.lspconfig")
-require("b.null-ls")
-require("b.nvim-comment")
-require("b.catppuccin")
-require("b.nvim-treesitter")
-require("b.luasnip")
-require("b.tabnine")
-require("b.autoclose")
-require("b.hologram")
+-- settings
+require("benzend.config.settings")
+
+require("benzend.config.keymap")
+require("benzend.config.mappings")
+
+-- package manager
+require("benzend.config.lazy")
+
+-- for lsp support for old outdated node repositories
+require("benzend.custom.node-fallback")
