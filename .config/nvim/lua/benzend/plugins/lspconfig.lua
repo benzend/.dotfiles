@@ -6,7 +6,7 @@ local M = {
 			local source_mapping = {
 				nvim_lsp = "[LSP]",
 				nvim_lua = "[Lua]",
-				cmp_tabnine = "[TN]",
+				-- cmp_tabnine = "[TN]",
 				path = "[Path]",
 			}
 			local lspkind = require("lspkind")
@@ -70,13 +70,13 @@ local M = {
 					end,
 				},
 
-				sources = {
-					{ name = "cmp_tabnine" },
-
+				sources = cmp.config.sources({
+					-- { name = "cmp_tabnine" },
 					{ name = "nvim_lsp" },
-
 					{ name = "luasnip" },
-				},
+					{ name = "buffer" },
+					{ name = "path" },
+				}),
 			})
 			-- Mappings.
 			-- See `:help vim.diagnostic.*` for documentation on any of the below functions
