@@ -10,7 +10,6 @@ local M = {
 				path = "[Path]",
 			}
 			local lspkind = require("lspkind")
-			local luasnip = require("luasnip")
 
 			cmp.setup({
 				snippet = {
@@ -19,7 +18,7 @@ local M = {
 						-- vim.fn['vsnip#anonymous'](args.body)
 
 						-- For `luasnip` user.
-						luasnip.lsp_expand(args.body)
+						-- luasnip.lsp_expand(args.body)
 
 						-- For `ultisnips` user.
 						-- vim.fn['UltiSnips#Anon'](args.body)
@@ -29,8 +28,6 @@ local M = {
 					["<Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
 							cmp.select_next_item()
-						elseif luasnip.expand_or_jumpable() then
-							luasnip.expand_or_jump()
 						else
 							fallback()
 						end
@@ -38,8 +35,6 @@ local M = {
 					["<S-Tab>"] = cmp.mapping(function(fallback)
 						if cmp.visible() then
 							cmp.select_prev_item()
-						elseif luasnip.jumpable(-1) then
-							luasnip.jump(-1)
 						else
 							fallback()
 						end
@@ -71,9 +66,7 @@ local M = {
 				},
 
 				sources = cmp.config.sources({
-					-- { name = "cmp_tabnine" },
 					{ name = "nvim_lsp" },
-					{ name = "luasnip" },
 				}),
 			})
 			-- Mappings.
