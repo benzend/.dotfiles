@@ -56,10 +56,6 @@ Install Neovim
 
 https://github.com/neovim/neovim#install-from-package
 
-Install Packer
-
-https://github.com/wbthomason/packer.nvim#quickstart
-
 ## Tmux setup
 
 Install Tmux
