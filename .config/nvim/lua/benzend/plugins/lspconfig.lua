@@ -47,7 +47,7 @@ local M = {
 						i = cmp.mapping.abort(),
 						c = cmp.mapping.close(),
 					}),
-					["<CR>"] = cmp.mapping.confirm({ select = false }),
+					["<CR>"] = cmp.mapping.confirm({ select = true }),
 				}),
 
 				formatting = {
@@ -153,6 +153,13 @@ local M = {
 						},
 					},
 				},
+			})
+			require("lspconfig")["solargraph"].setup({
+				on_attach = on_attach,
+				flags = lsp_flags,
+				settings = {
+					diagnostics = true
+				}
 			})
 	end
 }
