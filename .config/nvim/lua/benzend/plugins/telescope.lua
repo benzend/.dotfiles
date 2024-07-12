@@ -31,6 +31,7 @@ local M = {
 	end,
 	config = function(_, opts)
 		local telescope = require("telescope")
+    telescope.load_extension('projects')
 		telescope.setup(opts)
 	end,
 }
