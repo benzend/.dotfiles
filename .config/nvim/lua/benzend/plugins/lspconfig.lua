@@ -161,6 +161,13 @@ local M = {
 					diagnostics = true
 				}
 			})
+			require("lspconfig")["gopls"].setup({
+				on_attach = on_attach,
+				flags = lsp_flags,
+				settings = {
+					diagnostics = true
+				}
+			})
 	end
 }
 
