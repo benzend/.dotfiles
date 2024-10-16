@@ -1,7 +1,7 @@
 local M = {
     "nvim-treesitter/nvim-treesitter",
     opts = {
-        ensure_installed = { "javascript", "typescript", "ocaml", "lua", "rust", "ruby", "php" },
+        ensure_installed = { "javascript", "typescript", "ocaml", "lua", "rust", "ruby", "php", "html", "css" },
         sync_install = true,
         auto_install = true,
         highlight = {
