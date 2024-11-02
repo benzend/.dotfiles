@@ -1,6 +1,6 @@
 local M = {
   "nvim-telescope/telescope.nvim",
-  tag = "0.1.2",
+  tag = "0.1.8",
   dependencies = {
     "nvim-lua/plenary.nvim",
     "ahmedkhalf/project.nvim",
@@ -23,12 +23,18 @@ local M = {
   opts = function()
     return {
       pickers = {
-        find_files = { hidden = true },
-        live_grep = {
-          additional_args = function()
-            return { "--hidden" }
-          end,
-        },
+        show_all_buffers = true,
+        sort_lastused = true,
+        previewer = false,
+        find_files = {
+          find_command = {
+            "rg",
+            "--files",
+            "--hidden",
+            "--glob",
+            "!**/.git/*"
+          }
+        }
       },
       defaults = {
         file_ignore_patterns = {
@@ -36,6 +42,14 @@ local M = {
           ".git",
           ".next"
         },
+        vimgrep_arguments = {
+          "rg",
+          "--vimgrep",
+          "--hidden",
+          "--smart-case",
+          "--trim",
+          "-u"
+        }
       },
     }
   end,
