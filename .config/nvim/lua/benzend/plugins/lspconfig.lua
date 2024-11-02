@@ -105,36 +105,24 @@ local M = {
 				end, bufopts)
 			end
 
-			local lsp_flags = {
-				-- This is the default in Nvim 0.7+
-				debounce_text_changes = 150,
-			}
 			require("lspconfig")["ts_ls"].setup({
 				on_attach = on_attach,
-				flags = lsp_flags,
 			})
 			require("lspconfig")["rust_analyzer"].setup({
 				on_attach = on_attach,
-				flags = lsp_flags,
 				-- Server-specific settings...
 				settings = {
 					["rust-analyzer"] = {},
 				},
 			})
-			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			capabilities.textDocument.completion.completionItem.snippetSupport = true
 			require("lspconfig")["cssls"].setup({
 				on_attach = on_attach,
-				flags = lsp_flags,
-				capabilities = capabilities,
 			})
 			require("lspconfig")["html"].setup({
 				on_attach = on_attach,
-				flags = lsp_flags,
 			})
 			require("lspconfig")["lua_ls"].setup({
 				on_attach = on_attach,
-				flags = lsp_flags,
 				settings = {
 					Lua = {
 						diagnostics = {
@@ -145,7 +133,6 @@ local M = {
 			})
 			require("lspconfig")["intelephense"].setup({
 				on_attach = on_attach,
-				flags = lsp_flags,
 				settings = {
 					intelephense = {
 						stubs = {
@@ -154,16 +141,14 @@ local M = {
 					},
 				},
 			})
-			require("lspconfig")["solargraph"].setup({
+			require("lspconfig")["gopls"].setup({
 				on_attach = on_attach,
-				flags = lsp_flags,
 				settings = {
 					diagnostics = true
 				}
 			})
-			require("lspconfig")["gopls"].setup({
+			require("lspconfig")["ruby_lsp"].setup({
 				on_attach = on_attach,
-				flags = lsp_flags,
 				settings = {
 					diagnostics = true
 				}
