@@ -23,7 +23,6 @@ local M = {
   opts = function()
     return {
       pickers = {
-        show_all_buffers = true,
         sort_lastused = true,
         previewer = false,
         find_files = {
@@ -47,8 +46,7 @@ local M = {
           "--vimgrep",
           "--hidden",
           "--smart-case",
-          "--trim",
-          "-u"
+          "--trim"
         }
       },
     }
