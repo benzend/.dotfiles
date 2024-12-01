@@ -50,24 +50,11 @@ local M = {
 					["<CR>"] = cmp.mapping.confirm({ select = true }),
 				}),
 
-				formatting = {
-					format = function(entry, vim_item)
-						vim_item.kind = lspkind.presets.default[vim_item.kind]
-						local menu = source_mapping[entry.source.name]
-						if entry.source.name == "cmp_tabnine" then
-							if entry.completion_item.data ~= nil and entry.completion_item.data.detail ~= nil then
-								menu = entry.completion_item.data.detail .. " " .. menu
-							end
-							vim_item.kind = ""
-						end
-						vim_item.menu = menu
-						return vim_item
-					end,
-				},
-
 				sources = cmp.config.sources({
 					{ name = "nvim_lsp" },
-				}),
+				}, {
+          { name = "buffer" }
+        }),
 			})
 			-- Mappings.
 			-- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -105,11 +92,15 @@ local M = {
 				end, bufopts)
 			end
 
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
 			require("lspconfig")["ts_ls"].setup({
+        capabilities = capabilities,
 				on_attach = on_attach,
 			})
 			require("lspconfig")["rust_analyzer"].setup({
 				on_attach = on_attach,
+        capabilities = capabilities,
 				-- Server-specific settings...
 				settings = {
 					["rust-analyzer"] = {},
@@ -117,12 +108,15 @@ local M = {
 			})
 			require("lspconfig")["cssls"].setup({
 				on_attach = on_attach,
+        capabilities = capabilities,
 			})
 			require("lspconfig")["html"].setup({
 				on_attach = on_attach,
+        capabilities = capabilities,
 			})
 			require("lspconfig")["lua_ls"].setup({
 				on_attach = on_attach,
+        capabilities = capabilities,
 				settings = {
 					Lua = {
 						diagnostics = {
@@ -133,6 +127,7 @@ local M = {
 			})
 			require("lspconfig")["intelephense"].setup({
 				on_attach = on_attach,
+        capabilities = capabilities,
 				settings = {
 					intelephense = {
 						stubs = {
@@ -143,12 +138,14 @@ local M = {
 			})
 			require("lspconfig")["gopls"].setup({
 				on_attach = on_attach,
+        capabilities = capabilities,
 				settings = {
 					diagnostics = true
 				}
 			})
 			require("lspconfig")["ruby_lsp"].setup({
 				on_attach = on_attach,
+        capabilities = capabilities,
 				settings = {
 					diagnostics = true
 				}
