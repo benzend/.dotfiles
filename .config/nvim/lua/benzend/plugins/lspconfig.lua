@@ -1,5 +1,8 @@
 local M = {
 	'neovim/nvim-lspconfig',
+	dependencies = {
+		'L3MON4D3/LuaSnip'
+	},
 	config = function()
 		-- Setup nvim-cmp.
 			local cmp = require("cmp")
@@ -13,12 +16,19 @@ local M = {
 
 			cmp.setup({
 				snippet = {
+          formatting = {
+            format = lspkind.cmp_format({
+              mode = 'symbol_text',
+              maxwidth = 50,
+              ellispis_char = '...',
+            })
+          },
 					expand = function(args)
 						-- For `vsnip` user.
 						-- vim.fn['vsnip#anonymous'](args.body)
 
 						-- For `luasnip` user.
-						-- luasnip.lsp_expand(args.body)
+						require('luasnip').lsp_expand(args.body)
 
 						-- For `ultisnips` user.
 						-- vim.fn['UltiSnips#Anon'](args.body)
@@ -47,7 +57,10 @@ local M = {
 						i = cmp.mapping.abort(),
 						c = cmp.mapping.close(),
 					}),
-					["<CR>"] = cmp.mapping.confirm({ select = true }),
+					["<CR>"] = cmp.mapping.confirm({
+            behavior = cmp.ConfirmBehavior.Insert,
+            select = true
+          }),
 				}),
 
 				sources = cmp.config.sources({
@@ -139,17 +152,15 @@ local M = {
 			require("lspconfig")["gopls"].setup({
 				on_attach = on_attach,
         capabilities = capabilities,
-				settings = {
-					diagnostics = true
-				}
 			})
 			require("lspconfig")["ruby_lsp"].setup({
 				on_attach = on_attach,
         capabilities = capabilities,
-				settings = {
-					diagnostics = true
-				}
 			})
+      require("lspconfig")["ocamllsp"].setup({
+				on_attach = on_attach,
+        capabilities = capabilities,
+      })
 	end
 }
 
