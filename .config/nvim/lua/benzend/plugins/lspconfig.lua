@@ -107,11 +107,12 @@ local M = {
 
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-			require("lspconfig")["ts_ls"].setup({
+			vim.lsp.config("ts_ls", {
         capabilities = capabilities,
 				on_attach = on_attach,
 			})
-			require("lspconfig")["rust_analyzer"].setup({
+
+			vim.lsp.config("rust_analyzer", {
 				on_attach = on_attach,
         capabilities = capabilities,
 				-- Server-specific settings...
@@ -119,15 +120,17 @@ local M = {
 					["rust-analyzer"] = {},
 				},
 			})
-			require("lspconfig")["cssls"].setup({
+
+			vim.lsp.config("cssls", {
 				on_attach = on_attach,
         capabilities = capabilities,
 			})
-			require("lspconfig")["html"].setup({
+
+			vim.lsp.config("html", {
 				on_attach = on_attach,
         capabilities = capabilities,
 			})
-			require("lspconfig")["lua_ls"].setup({
+			vim.lsp.config("lua_ls", {
 				on_attach = on_attach,
         capabilities = capabilities,
 				settings = {
@@ -138,7 +141,7 @@ local M = {
 					},
 				},
 			})
-			require("lspconfig")["intelephense"].setup({
+			vim.lsp.config("intelephense", {
 				on_attach = on_attach,
         capabilities = capabilities,
 				settings = {
@@ -149,15 +152,15 @@ local M = {
 					},
 				},
 			})
-			require("lspconfig")["gopls"].setup({
+			vim.lsp.config("gopls", {
 				on_attach = on_attach,
         capabilities = capabilities,
 			})
-			require("lspconfig")["ruby_lsp"].setup({
+			vim.lsp.config("ruby_lsp", {
 				on_attach = on_attach,
         capabilities = capabilities,
 			})
-      require("lspconfig")["ocamllsp"].setup({
+      vim.lsp.config("ocamllsp", {
 				on_attach = on_attach,
         capabilities = capabilities,
       })
