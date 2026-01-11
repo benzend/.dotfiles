@@ -2,7 +2,17 @@
 
 In order to pull in this .dotfiles setup for linux or macOS (this won't work for Windows) please follow these steps:
 
-### Dotfiles Shortcut
+### Quick Install
+
+You can install these dotfiles with a single command:
+
+```bash
+bash <(curl -sL https://raw.githubusercontent.com/benzend/.dotfiles/main/install.sh)
+```
+
+### Manual Installation
+
+#### Dotfiles Shortcut
 
 Add a dotfiles alias to one of your configs so that you can easily pull in and control your dotfiles.
 
@@ -24,7 +34,7 @@ function dotfiles
 end
 ```
 
-### Setting Up
+#### Setting Up
 
 Make sure that the git file isn't saved to the repository by adding a .gitignore file and inserting .dotfiles into it
 
